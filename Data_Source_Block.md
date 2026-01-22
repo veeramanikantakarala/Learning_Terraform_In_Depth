@@ -1,7 +1,7 @@
 
 **TEST**
 
-```
+```sh
 provider "aws" {
 }
 
