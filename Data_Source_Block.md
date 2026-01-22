@@ -1,15 +1,6 @@
 
+**TEST**
 
-terraform {
-  required_providers {
-    digitalocean = {
-      source  = "digitalocean/digitalocean"
-    }
-  }
-}
-
-provider "digitalocean" {
-  token = "your-token-here"
-}
-
-data "digitalocean_account" "example" {}
+```
+test
+```
