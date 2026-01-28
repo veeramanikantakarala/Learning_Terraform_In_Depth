@@ -20,15 +20,42 @@ resource "local_file" "foo_key" {
   content  = "helloworld"
   filename = each.key
 }
+
+resource "local_file" "foo_value" {
+  for_each = tomap(var.example_map)
+  content  = "helloworld"
+  filename = each.value
+}
 ```
 
-### terraform apply output
+### terraform plan
 ```sh
-$ terraform apply 
-local_file.foo_1["key2"]: Creation complete after 0s [id=6adfb183a4a2c94a2f92dab5ade762a47889a5a1]
-local_file.foo_1["key1"]: Creation complete after 0s [id=6adfb183a4a2c94a2f92dab5ade762a47889a5a1]
-local_file.foo_1["key3"]: Creation complete after 0s [id=6adfb183a4a2c94a2f92dab5ade762a47889a5a1]
-Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+$ terraform plan 
+ # local_file.foo_key["key1"] will be created
+  + resource "local_file" "foo_key" {
+      + filename             = "key1"
+    }
+  # local_file.foo_key["key2"] will be created
+  + resource "local_file" "foo_key" {
+      + filename             = "key2"
+    }
+  # local_file.foo_key["key3"] will be created
+  + resource "local_file" "foo_key" {
+      + filename             = "key3"
+    }
+  # local_file.foo_value["key1"] will be created
+  + resource "local_file" "foo_value" {
+      + filename             = "value1"
+    }
+  # local_file.foo_value["key2"] will be created
+  + resource "local_file" "foo_value" {
+      + filename             = "value2"
+    }
+  # local_file.foo_value["key3"] will be created
+  + resource "local_file" "foo_value" {
+      + filename             = "value3"
+    }
+Plan: 6 to add, 0 to change, 0 to destroy.
 ```
 
 
