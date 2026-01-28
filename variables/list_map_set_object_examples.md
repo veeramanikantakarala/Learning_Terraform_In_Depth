@@ -55,9 +55,8 @@ variable "example_set" {
   default = ["foo", "bar", "baz","baz"]
 }
 ```
-
-### terraform console 
 ### Note that sets are unordered, so the order may appear alphabetical but is not guaranteed.
+### terraform console 
 ```sh
 > var.example_set
 toset([
