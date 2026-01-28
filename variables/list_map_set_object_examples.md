@@ -100,13 +100,12 @@ variable "example_object" {
     "us-west-2",
   ])
 }
-Access attributes using dot notation:
 
+# Access attributes using dot notation:
 > var.example_object.name
 "Terraform"
 
-Access nested list elements:
-
+# Access nested list elements:
 > var.example_object.regions[1]
 "us-west-2"
 ```
