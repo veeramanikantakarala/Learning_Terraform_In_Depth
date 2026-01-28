@@ -38,7 +38,7 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
 
 
-### terraform plan and console 
+### terraform console 
 ```sh
 > local_file.foo["./file_a.txt"].filename
 "./file_a.txt"
