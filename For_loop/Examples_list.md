@@ -1,6 +1,6 @@
 
 
-### List of filename
+### List of filenames
 
 ```sh
 variable "filename_list" {
@@ -9,7 +9,6 @@ variable "filename_list" {
 }
 ```
 
-### Note: The given "for_each" argument value is unsuitable: the "for_each" argument must be a map, or set of strings, and you have provided a value of type │ list of string.
 ### for_each with list
 ```sh
 variable "filename_list" {
@@ -17,6 +16,8 @@ variable "filename_list" {
   default = ["./file_a.txt","./file_b.txt","./file_b.txt"]
 }
 ```
+### Note: The given "for_each" argument value is unsuitable: the "for_each" argument must be a map, or set of strings, and you have provided a value of type │ list of string.
+
 ### for_each with list
 ```sh
 resource "local_file" "foo" {
