@@ -52,7 +52,13 @@
 ## abc
 
 Content for abc goes here.
+- abc
+- def
+- Click to minimize
 
 ## def
 
 Content for def goes here.
+- abc
+- def
+- Click to minimize
